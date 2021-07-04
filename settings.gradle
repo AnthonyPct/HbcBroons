@@ -1,0 +1,2 @@
+rootProject.name = "HBC"
+include ':app'
