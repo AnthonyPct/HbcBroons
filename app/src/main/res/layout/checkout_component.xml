@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_dashboard_historic"
+    android:padding="30dp">
+
+    <TextView
+        android:id="@+id/checkout_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/nexabold"
+        android:textColor="@color/black"
+        android:textSize="32sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="172,00€" />
+
+    <TextView
+        android:id="@+id/checkout_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/resume_checkout_title"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/checkout_amount" />
+
+    <View
+        android:id="@+id/unpayed_dot"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:background="@drawable/historic_dot"
+        app:layout_constraintBottom_toBottomOf="@id/checkout_ununpayed_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/checkout_ununpayed_title" />
+
+    <TextView
+        android:id="@+id/checkout_ununpayed_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/resume_checkout_unpayed_title"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@id/unpayed_dot"
+        app:layout_constraintTop_toBottomOf="@id/checkout_title" />
+
+    <TextView
+        android:id="@+id/checkout_ununpayed_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/nexabold"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="@id/checkout_ununpayed_title"
+        app:layout_constraintTop_toBottomOf="@id/checkout_ununpayed_title"
+        tools:text="82,47€" />
+
+    <View
+        android:id="@+id/estimated_dot"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:background="@drawable/historic_dot"
+        app:layout_constraintBottom_toBottomOf="@id/checkout_estimated_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/checkout_estimated_title" />
+
+    <TextView
+        android:id="@+id/checkout_estimated_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/resume_checkout_estimated_title"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@id/estimated_dot"
+        app:layout_constraintTop_toBottomOf="@id/checkout_ununpayed_amount" />
+
+    <TextView
+        android:id="@+id/checkout_estimated_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/nexabold"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="@id/checkout_estimated_title"
+        app:layout_constraintTop_toBottomOf="@id/checkout_estimated_title"
+        tools:text="82,47€" />
+
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/resume_checkout_chart"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="40dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/checkout_title"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

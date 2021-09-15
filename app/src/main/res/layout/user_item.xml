@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/user_cell"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="2dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingHorizontal="8dp"
+        tools:background="@color/yellow">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/user_image"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:padding="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/beer" />
+
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/nexabold"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/user_image"
+            tools:text="Anthony" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/user_team_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/rounded_grey"
+            android:padding="6dp"
+            android:src="@drawable/ic_outline_group"
+            android:tint="@color/dark_grey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/user_name" />
+
+        <TextView
+            android:id="@+id/user_team_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:fontFamily="@font/nexa"
+            android:text="Equipe"
+            android:textColor="@color/lavender"
+            android:textSize="13sp"
+            app:layout_constraintStart_toEndOf="@id/user_team_img"
+            app:layout_constraintTop_toTopOf="@id/user_team_img" />
+
+        <TextView
+            android:id="@+id/user_team"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:fontFamily="@font/nexa"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@id/user_team_img"
+            app:layout_constraintTop_toBottomOf="@id/user_team_title"
+            tools:text="SG" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/user_balance_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded_grey"
+            android:padding="6dp"
+            android:src="@drawable/ic_outline_money"
+            android:tint="@color/dark_grey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/user_team_img" />
+
+        <TextView
+            android:id="@+id/user_balance_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:fontFamily="@font/nexa"
+            android:text="Solde"
+            android:textColor="@color/lavender"
+            android:textSize="13sp"
+            app:layout_constraintStart_toEndOf="@id/user_balance_img"
+            app:layout_constraintTop_toTopOf="@id/user_balance_img" />
+
+        <TextView
+            android:id="@+id/user_balance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:fontFamily="@font/nexa"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@id/user_balance_img"
+            app:layout_constraintTop_toBottomOf="@id/user_balance_title"
+            tools:text="+12€" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/user_consumptions_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded_grey"
+            android:padding="6dp"
+            android:src="@drawable/ic_drink"
+            android:tint="@color/dark_grey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/user_balance_img" />
+
+        <TextView
+            android:id="@+id/user_consumptions_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:fontFamily="@font/nexa"
+            android:text="Total gobelets"
+            android:textColor="@color/lavender"
+            android:textSize="13sp"
+            app:layout_constraintStart_toEndOf="@id/user_consumptions_img"
+            app:layout_constraintTop_toTopOf="@id/user_consumptions_img" />
+
+        <TextView
+            android:id="@+id/user_consumption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:fontFamily="@font/nexa"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@id/user_balance_img"
+            app:layout_constraintTop_toBottomOf="@id/user_consumptions_title"
+            tools:text="54" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

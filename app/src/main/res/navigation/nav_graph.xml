@@ -6,18 +6,63 @@
 
     <fragment
         android:id="@+id/dashboardFragment"
-        android:name="com.example.hbc.presentation.dashboard.DashboardFragment"
-        android:label="DashboardFragment" >
+        android:name="com.foyer.hbc.presentation.dashboard.DashboardFragment"
+        android:label="DashboardFragment">
         <action
-            android:id="@+id/action_dashboardFragment_to_statisticFragment"
-            app:destination="@id/statisticFragment" />
+            android:id="@+id/action_dashboardFragment_to_validate_order_fragment"
+            app:destination="@id/select_user_fragment" />
     </fragment>
     <fragment
         android:id="@+id/statisticFragment"
-        android:name="com.example.hbc.presentation.stats.StatisticFragment"
-        android:label="StatisticFragment" >
+        android:name="com.foyer.hbc.presentation.stats.StatisticFragment"
+        android:label="StatisticFragment" />
+    <dialog
+        android:id="@+id/select_user_fragment"
+        android:name="com.foyer.hbc.presentation.users.select.SelectUserFragment" />
+    <action
+        android:id="@+id/action_global_dashboardFragment"
+        app:destination="@id/dashboardFragment"
+        app:popUpTo="@id/dashboardFragment"
+        app:popUpToInclusive="true" />
+    <action
+        android:id="@+id/action_global_statisticFragment"
+        app:destination="@id/statisticFragment" />
+
+    <fragment
+        android:id="@+id/usersFragment"
+        android:name="com.foyer.hbc.presentation.users.UsersFragment"
+        android:label="UsersFragment">
         <action
-            android:id="@+id/action_statisticFragment_to_dashboardFragment"
-            app:destination="@id/dashboardFragment" />
+            android:id="@+id/action_usersFragment_to_passwordDialogFragment"
+            app:destination="@id/passwordDialogFragment" />
+        <action
+            android:id="@+id/action_usersFragment_to_addUserFragment"
+            app:destination="@id/addUserFragment" />
     </fragment>
+    <action
+        android:id="@+id/action_global_usersFragment"
+        app:destination="@id/usersFragment" />
+    <dialog
+        android:id="@+id/passwordDialogFragment"
+        android:name="com.foyer.hbc.presentation.PasswordDialogFragment"
+        android:label="PasswordDialogFragment" />
+    <dialog
+        android:id="@+id/addUserFragment"
+        android:name="com.foyer.hbc.presentation.users.add.AddUserFragment"
+        android:label="AddUserFragment" />
+    <fragment
+        android:id="@+id/resumeFragment"
+        android:name="com.foyer.hbc.presentation.resume.ResumeFragment"
+        android:label="ResumeFragment" />
+    <action
+        android:id="@+id/action_global_resumeFragment"
+        app:destination="@id/resumeFragment" />
+    <fragment
+        android:id="@+id/matchsFagment"
+        android:name="com.foyer.hbc.presentation.match.MatchsFagment"
+        android:label="MatchsFagment" />
+    <action
+        android:id="@+id/action_global_matchsFagment"
+        app:destination="@id/matchsFagment" />
+
 </navigation>

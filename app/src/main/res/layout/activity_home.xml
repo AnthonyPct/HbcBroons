@@ -5,12 +5,30 @@
     android:layout_height="match_parent"
     android:background="@color/background_dashboard">
 
-    <com.example.hbc.presentation.home.HomeLeftNavigationBar
+    <com.foyer.hbc.presentation.home.HomeLeftNavigationBar
         android:id="@+id/left_navigation_bar"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <FrameLayout
+        android:id="@+id/progress_layout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/loading_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/left_navigation_bar"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ProgressBar
+            android:id="@+id/home_loader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminate="true" />
+    </FrameLayout>
 
     <!-- Content -->
     <androidx.fragment.app.FragmentContainerView
@@ -24,4 +42,5 @@
         app:layout_constraintStart_toEndOf="@id/left_navigation_bar"
         app:layout_constraintTop_toTopOf="parent"
         app:navGraph="@navigation/nav_graph" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

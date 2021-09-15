@@ -1,22 +1,177 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:background="@color/yellow">
 
     <!-- Header-->
-    <TextView
-        android:id="@+id/header_title"
+    <View
         android:layout_width="0dp"
-        android:layout_height="120dp"
+        android:layout_height="160dp"
         android:background="@android:color/holo_red_light"
-        android:paddingStart="80dp"
-        android:paddingTop="30dp"
-        android:text="Tableau de bord \nA la votre et que le meilleur gagne"
-        android:textColor="@android:color/white"
-        android:textSize="22dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/header_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="30dp"
+        android:background="@android:color/holo_red_light"
+        android:fontFamily="@font/nexabold"
+        android:text="@string/header_dashboard_title"
+        android:textColor="@android:color/white"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/header_subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/nexalight"
+        android:text="@string/header_dashboard_subtitle"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@id/header_title"
+        app:layout_constraintTop_toBottomOf="@id/header_title" />
+
+    <TextView
+        android:id="@+id/header_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="50dp"
+        android:fontFamily="@font/nexabold"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Dimanche 4 Juillet" />
+
+    <!-- Carroussel -->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/dashboard_carousel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:clipToPadding="false"
+        android:orientation="horizontal"
+        android:paddingStart="60dp"
+        android:paddingEnd="30dp"
+        android:paddingBottom="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header_subtitle"
+        tools:itemCount="1"
+        tools:listitem="@layout/carousel_card_item" />
+
+    <!-- Historic -->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/dashboard_historic"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/background_dashboard_historic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideline"
+        app:layout_constraintTop_toBottomOf="@id/dashboard_carousel" />
+
+
+    <TextView
+        android:id="@+id/dashboard_historic_error"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/background_dashboard_historic"
+        android:fontFamily="@font/nexabold"
+        android:gravity="center"
+        android:text="@string/historic_error"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideline"
+        app:layout_constraintTop_toBottomOf="@id/dashboard_carousel"
+        tools:visibility="visible" />
+
+    <ProgressBar
+        android:id="@+id/dashboard_historic_loader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/dashboard_historic"
+        app:layout_constraintEnd_toEndOf="@+id/dashboard_historic"
+        app:layout_constraintStart_toStartOf="@id/dashboard_historic"
+        app:layout_constraintTop_toTopOf="@+id/dashboard_historic" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.65" />
+
+    <com.foyer.hbc.presentation.dashboard.order.OrderComponent
+        android:id="@+id/dashboard_beer_order_component"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        app:img="@drawable/beer"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dashboard_carousel"
+        app:productType="beer"
+        app:showCheckbox="true"
+        app:title="@string/order_beer_title" />
+
+    <com.foyer.hbc.presentation.dashboard.order.OrderComponent
+        android:id="@+id/dashboard_soft_order_component"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        app:img="@drawable/soft"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/dashboard_beer_order_component"
+        app:layout_constraintTop_toBottomOf="@id/dashboard_carousel"
+        app:productType="soft"
+        app:showCheckbox="true"
+        app:title="@string/order_soft_title" />
+
+    <com.foyer.hbc.presentation.dashboard.order.OrderComponent
+        android:id="@+id/dashboard_eat_order_component"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        app:img="@drawable/snack"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/dashboard_soft_order_component"
+        app:layout_constraintTop_toBottomOf="@id/dashboard_carousel"
+        app:productType="eat"
+        app:showCheckbox="false"
+        app:title="@string/order_eat_title" />
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/dashboard_order_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:enabled="false"
+        android:text="@string/order_button"
+        app:backgroundTint="@color/cornflower_blue"
+        app:icon="@drawable/ic_check"
+        app:layout_constraintEnd_toEndOf="@id/dashboard_soft_order_component"
+        app:layout_constraintTop_toBottomOf="@id/dashboard_beer_order_component"
+        app:productType="soft" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

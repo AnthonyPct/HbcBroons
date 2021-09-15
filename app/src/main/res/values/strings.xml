@@ -1,3 +1,104 @@
 <resources>
     <string name="app_name">HBC</string>
+
+    <!-- Common-->
+    <string name="common_validate">Valider</string>
+    <string name="common_cancel">Annuler</string>
+    <string name="general_error">Une erreur est survenu</string>
+
+    <!-- SplashScreen-->
+    <string name="splashscreen_error_internet_message">Active la connexion internet stp sinon pas de bières</string>
+    <string name="splashscreen_error_message">Un problème est survenu</string>
+
+    <!-- Dashboard Header-->
+    <string name="header_dashboard_title">Tableau de bord</string>
+    <string name="header_dashboard_subtitle">A la votre et que le meilleur gagne. Pour prendre ta conso,
+        selectionne le nombre de bières/softs/gateaux \npuis clique sur payer et sélectionne toi dans la liste qui apparait. </string>
+
+    <!-- Dashboard Carousel-->
+    <string name="carousel_checkout_title">Montant actuel de la cagnotte</string>
+    <string name="carousel_checkout_subtitle">Il y a actuellement une facture en cours non payés de %s</string>
+    <string name="carousel_checkout_subtitle_no_bill">Pas de factures en cours, tout est payé</string>
+    <string name="carousel_unpayed_title">Le mauvais élève</string>
+    <string name="carousel_unpayed_subtitle">Dépêche toi de payer, tu dois %s</string>
+    <string name="carousel_sum_title">Total de gobelet engloutis</string>
+    <string name="carousel_payed_title">Le bon élève</string>
+    <string name="carousel_payed_subtitle">Continue comme ca, tu as %s crédits</string>
+
+    <!-- Dashboard Historic -->
+    <string name="historic_header_title">Historique des consommations</string>
+    <string name="historic_error">Une erreur est survenu pour récupérer les consommations</string>
+    <string name="historic_footer_text">Voir plus</string>
+
+    <!--Dashboard Order-->
+    <string name="order_beer_title">Bière \nPression</string>
+    <string name="order_soft_title">Soft</string>
+    <string name="order_eat_title">Gateaux</string>
+    <string name="order_button">Payer</string>
+    <string name="order_button_with_quantity">Payer %s</string>
+    <string name="order_validate_popup_title">Selectionner l\'utilisateur pour la commande</string>
+    <string name="order_validate_popup_error">Une erreur est survenu pour récupérer les utilisateurs</string>
+    <string name="order_select_user_balance"> Solde actuel : %s</string>
+    <string name="order_select_user_not_found"> Je ne suis pas dans la liste</string>
+    <string name="order_confirmation_popup_title">Confirmation</string>
+    <string name="order_confirmation_popup_message">%s pour %s</string>
+
+    <!-- Users-->
+    <string name="header_users_title">Les utilisateurs</string>
+    <string name="header_users_subtitle">Sélectionnez vous pour consulter votre historique de paiements, créditer votre compte
+        \nou encore modifier votre photo\n\n T\'es pas dans la liste ? Créer toi un compte en cliquant sur le bouton à droite</string>
+
+    <string name="users_historic_message">Aucun utilisateur sélectionné</string>
+    <string name="users_historic_error_message">Un problème est survenu</string>
+    <string name="user_credit_button">Créditer</string>
+    <string name="user_credit_view_title">Historique des paiements</string>
+    <string name="user_credit_view_no_payment_title">Toujours pas de paiements, il va être tant de raquer</string>
+    <string name="user_credit_view_message">Renseignez le montant à crediter (cb ou espèce)</string>
+    <string name="user_amount_hint">Montant</string>
+    <string name="user_credit_mode_cash">Espèces</string>
+    <string name="user_credit_mode_card">CB</string>
+
+    <!-- Add Users-->
+    <string name="user_add_title">Ajout d\'un utilisateur</string>
+    <string name="user_add_error">L\'ajout n\'a pas pu être effectué. Vérifié les informations, la connexion internet et réessayer plus tard si le problème persiste</string>
+    <string name="user_add_peusdo">Nom/Pseudo</string>
+    <string name="user_add_team">Equipe</string>
+    <string name="user_add_team_sg">Séniors garcon</string>
+    <string name="user_add_team_sf">Séniors fille</string>
+    <string name="user_add_team_others">Autres</string>
+
+    <!-- Password Dialog-->
+    <string name="password_dialog_title">Veuillez entrer le mot de passe pour continuer</string>
+    <string name="password_dialog_error">Mot de passe incorrect, demande à Antho</string>
+    <string name="password_dialog_Success">Le paiement a bien été ajouté</string>
+    <string name="password_dialog_error_invalid_amount">Erreur, vérifie que le montant est ok</string>
+
+    <!-- Stats fragment-->
+    <string name="statistic_header_title">Statistiques</string>
+    <string name="statistic_header_subtitle">Les hommes mentent, pas les chiffres ! </string>
+
+    <!-- Resume fragment-->
+    <string name="resume_header_title">Bilan</string>
+    <string name="resume_header_subtitle">C\'est ici qu\'on voit l\'état de la cagnotte en cours,
+        et ici qu\'on ajoute les factures \nPour l\'instant l\'ajout de factures est fait manuellement</string>
+    <string name="resume_checkout_title">Montant actuel dans la cagnotte </string>
+    <string name="resume_checkout_unpayed_title">Total impayés</string>
+    <string name="resume_checkout_estimated_title">Montant estimé de la cagnotte</string>
+    <string name="resume_checkout_bills_title">Liste des factures en cours et payés</string>
+    <string name="resume_checkout_bills_nb_fut">%s futs</string>
+    <string name="resume_confirm_bill_payment">Marquer cette facture comme payée ? </string>
+
+    <!-- Matchs -->
+    <string name="matchs_header_title">Les matchs</string>
+    <string name="matchs_header_subtitle">C\'est pas le tout de boire des bières mais il s\'agirait de faire top1 aussi.
+        \nTu peux changer d\'équipe en cliquant à droite</string>
+    <string name="matchs_date_unkow">Date inconnu</string>
+    <string name="matchs_date">%s \n %2sh:%3s</string>
+    <string name="match_filter">Filtrer sur les matchs de broons</string>
+    <string name="match_day">Journée %s</string>
+    <string-array name="team">
+        <item>Séniors garcons</item>
+        <item>Séniors filles</item>
+    </string-array>
+
 </resources>

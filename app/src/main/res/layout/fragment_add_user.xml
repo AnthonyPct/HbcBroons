@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="30dp">
+
+    <TextView
+        android:id="@+id/user_add_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/nexabold"
+        android:text="@string/user_add_title"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/user_add_pseudo_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/nexa"
+        android:text="@string/user_add_peusdo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/user_add_title" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/user_pseudo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/nexabold"
+        android:hint="Anthony"
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/user_add_pseudo_text" />
+
+    <TextView
+        android:id="@+id/user_add_team_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/nexa"
+        android:text="@string/user_add_team"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/user_pseudo" />
+
+    <CheckBox
+        android:id="@+id/user_add_sg_box"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nexa"
+        android:text="@string/user_add_team_sg"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/user_add_team_text" />
+
+    <CheckBox
+        android:id="@+id/user_add_sf_box"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/nexa"
+        android:text="@string/user_add_team_sg"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@id/user_add_sg_box"
+        app:layout_constraintTop_toBottomOf="@id/user_add_team_text" />
+
+    <CheckBox
+        android:id="@+id/user_add_other_box"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/nexa"
+        android:text="@string/user_add_team_others"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@id/user_add_sf_box"
+        app:layout_constraintTop_toBottomOf="@id/user_add_team_text" />
+
+    <Button
+        android:id="@+id/user_add_validate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:enabled="false"
+        android:paddingHorizontal="60dp"
+        android:text="@string/common_validate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/user_add_other_box" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

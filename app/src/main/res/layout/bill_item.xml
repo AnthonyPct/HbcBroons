@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <View
+        android:id="@+id/color_bar"
+        android:layout_width="8dp"
+        android:layout_height="70dp"
+        android:background="@color/yellow"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/payment_day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:fontFamily="@font/nexabold"
+        android:textColor="@color/black"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="September 15th" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/payment_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:fontFamily="@font/nexabold"
+        android:textColor="@color/black"
+        android:textSize="17sp"
+        app:layout_constraintStart_toEndOf="@id/payment_day"
+        app:layout_constraintTop_toTopOf="@id/payment_day"
+        tools:text="20€" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/payment_fut_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:fontFamily="@font/nexabold"
+        android:textColor="@color/black"
+        android:textSize="17sp"
+        app:layout_constraintStart_toEndOf="@id/payment_amount"
+        app:layout_constraintTop_toTopOf="@id/payment_day"
+        tools:text="2 fûts" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/payment_see_bill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:src="@drawable/ic_eye"
+        android:tint="@color/cornflower_blue"
+        app:layout_constraintStart_toEndOf="@id/payment_fut_number"
+        app:layout_constraintTop_toTopOf="@id/payment_amount" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/payment_payed_bill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:src="@drawable/ic_credit_card"
+        android:tint="@color/cornflower_blue"
+        app:layout_constraintStart_toEndOf="@id/payment_see_bill"
+        app:layout_constraintTop_toTopOf="@id/payment_amount" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

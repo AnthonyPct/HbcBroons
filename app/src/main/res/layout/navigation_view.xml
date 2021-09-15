@@ -18,7 +18,7 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_gravity="center"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
         android:background="@drawable/background_navigation_button"
         android:padding="13dp"
         android:src="@drawable/ic_outline_home"
@@ -45,7 +45,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
-        android:background="@drawable/background_navigation_button_inactive"
+        android:background="@drawable/background_navigation_button"
         android:padding="13dp"
         android:src="@drawable/ic_outline_group"
         android:tint="@color/inactive_icon_navigation" />
@@ -58,7 +58,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
-        android:background="@drawable/background_navigation_button_inactive"
+        android:background="@drawable/background_navigation_button"
         android:padding="13dp"
         android:src="@drawable/ic_outline_money"
         android:tint="@color/inactive_icon_navigation" />
@@ -71,7 +71,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
-        android:background="@drawable/background_navigation_button_inactive"
+        android:background="@drawable/background_navigation_button"
         android:padding="13dp"
         android:src="@drawable/ic_outline_sports"
         android:tint="@color/inactive_icon_navigation" />

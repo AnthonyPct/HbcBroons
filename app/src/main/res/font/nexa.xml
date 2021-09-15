@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<font-family xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <font
+        android:font="@font/nexalight"
+        android:fontStyle="normal"
+        android:fontWeight="400"
+        tools:ignore="UnusedAttribute" />
+    <font
+        android:font="@font/nexabold"
+        android:fontStyle="normal"
+        android:fontWeight="700"
+        tools:ignore="UnusedAttribute" />
+    <font
+        android:font="@font/nexaitalic"
+        android:fontStyle="italic"
+        android:fontWeight="400"
+        tools:ignore="UnusedAttribute" />
+</font-family>

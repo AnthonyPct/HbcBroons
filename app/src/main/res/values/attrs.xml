@@ -1,0 +1,12 @@
+<resources>
+    <declare-styleable name="OrderComponent">
+        <attr name="showCheckbox" format="boolean" />
+        <attr name="title" format="string" />
+        <attr name="img" format="reference" />
+        <attr name="productType" format="enum">
+            <enum name="beer" value="0" />
+            <enum name="soft" value="1" />
+            <enum name="eat" value="2" />
+        </attr>
+    </declare-styleable>
+</resources>

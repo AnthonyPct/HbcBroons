@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="500dp"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:paddingHorizontal="10dp"
+    tools:background="@color/lavender"
+    tools:visibility="visible">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/user_credit_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/rounded_grey"
+        android:padding="6dp"
+        android:src="@drawable/ic_close_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/nexabold"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Anthony" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/user_team_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/rounded_grey"
+        android:padding="6dp"
+        android:src="@drawable/ic_outline_group"
+        android:tint="@color/dark_grey"
+        app:layout_constraintEnd_toStartOf="@id/user_team"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/user_name" />
+
+    <TextView
+        android:id="@+id/user_team"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nexa"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/user_team_img"
+        app:layout_constraintEnd_toStartOf="@id/user_balance_img"
+        app:layout_constraintStart_toEndOf="@id/user_team_img"
+        app:layout_constraintTop_toTopOf="@+id/user_team_img"
+        tools:text="SG" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/user_balance_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_grey"
+        android:padding="6dp"
+        android:src="@drawable/ic_outline_money"
+        android:tint="@color/dark_grey"
+        app:layout_constraintEnd_toStartOf="@id/user_balance"
+        app:layout_constraintStart_toEndOf="@id/user_team"
+        app:layout_constraintTop_toTopOf="@+id/user_team_img" />
+
+    <TextView
+        android:id="@+id/user_balance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nexa"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/user_balance_img"
+        app:layout_constraintEnd_toStartOf="@id/user_consumptions_img"
+        app:layout_constraintStart_toEndOf="@id/user_balance_img"
+        app:layout_constraintTop_toTopOf="@id/user_balance_img"
+        tools:text="+12€" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/user_consumptions_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_grey"
+        android:padding="6dp"
+        android:src="@drawable/ic_drink"
+        android:tint="@color/dark_grey"
+        app:layout_constraintEnd_toStartOf="@id/user_consumption"
+        app:layout_constraintStart_toEndOf="@id/user_balance"
+        app:layout_constraintTop_toTopOf="@id/user_team_img" />
+
+    <TextView
+        android:id="@+id/user_consumption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nexa"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/user_consumptions_img"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@id/user_consumptions_img"
+        app:layout_constraintTop_toTopOf="@+id/user_consumptions_img"
+        tools:text="54" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/nexabold"
+        android:text="@string/user_credit_view_title"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/user_team_img" />
+
+    <TextView
+        android:id="@+id/user_no_credit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/user_credit_view_no_payment_title"
+        android:textSize="14sp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        tools:visibility="visible" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/user_payments"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@id/credit_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title" />
+
+    <TextView
+        android:id="@+id/credit_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="30dp"
+        android:fontFamily="@font/nexabold"
+        android:text="@string/user_credit_view_message"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@id/user_credit_amount"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/user_credit_amount"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:hint="@string/user_amount_hint"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toBottomOf="@id/user_credit_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/user_credit_button" />
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/user_credit_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"
+        android:enabled="false"
+        android:text="@string/user_credit_button"
+        app:backgroundTint="@color/cornflower_blue"
+        app:icon="@drawable/ic_credit_card"
+        app:layout_constraintBottom_toTopOf="@id/user_credit_cash_checkbox"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:visibility="visible" />
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/user_credit_cash_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="@string/user_credit_mode_cash"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/user_credit_amount" />
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/user_credit_card_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="20dp"
+        android:checked="true"
+        android:text="@string/user_credit_mode_card"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/user_credit_cash_checkbox" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
