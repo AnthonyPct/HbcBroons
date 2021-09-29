@@ -7,6 +7,7 @@ import com.foyer.hbc.data.database.DatabaseRepository
 import com.foyer.hbc.domain.usecase.stats.GetConsumptionsEntryUseCase
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import org.koin.android.ext.koin.androidApplication
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -52,11 +53,11 @@ class StatsViewModel(
 
     override fun getData() {
         viewModelScope.launch {
-//            getConsumptionsEntryUseCase.execute().collect {
-//                mutableStateFlow.value = StatisticState.Success(it)
-//            }
-            mutableStateFlow.value =
-                StatisticState.UserSuccess(databaseRepository.getBestFiveUser())
+            val bestUser = databaseRepository.getBestFiveUser()
+
+            getConsumptionsEntryUseCase.execute().collect {
+                mutableStateFlow.value = StatisticState.Success(it, bestUser)
+            }
         }
     }
 }

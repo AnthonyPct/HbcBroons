@@ -17,7 +17,7 @@ class XAxisDateFormatter : ValueFormatter() {
     ///////////////////////////////////////////////////////////////////////////
 
     override fun getFormattedValue(value: Float): String {
-        val millis = value.toLong() * 1000L
+        val millis = value.toLong()
         return mFormat.format(Date(millis))
     }
 }

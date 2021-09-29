@@ -45,6 +45,7 @@ interface DatabaseRepository {
 
     suspend fun savePayment(payments: List<PaymentEntity>)
     suspend fun getPayment(username: String): List<PaymentEntity>
+    fun getAllPayment(): Flow<List<PaymentEntity>>
     suspend fun addPayment(paymentEntity: PaymentEntity)
     fun getBills(): Flow<List<PaymentEntity>>
     suspend fun getCurrentBillsAmount(): Double?

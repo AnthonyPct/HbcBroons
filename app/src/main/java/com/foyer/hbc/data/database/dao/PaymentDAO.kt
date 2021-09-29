@@ -15,6 +15,9 @@ interface PaymentDAO {
     @Query("Select * from PaymentEntity where user = :username ORDER BY date DESC")
     suspend fun getUserPayments(username: String): List<PaymentEntity>
 
+    @Query("Select * from PaymentEntity")
+    fun getAllPayments(): Flow<List<PaymentEntity>>
+
     @Query("Select * from PaymentEntity where charge = :isCharge")
     fun getBillsFlow(isCharge: Boolean = true): Flow<List<PaymentEntity>>
 

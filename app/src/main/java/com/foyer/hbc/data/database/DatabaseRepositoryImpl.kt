@@ -143,6 +143,10 @@ class DatabaseRepositoryImpl(
         return paymentDAO.getUserPayments(username)
     }
 
+    override fun getAllPayment(): Flow<List<PaymentEntity>> {
+        return paymentDAO.getAllPayments()
+    }
+
     override suspend fun addPayment(paymentEntity: PaymentEntity) {
         paymentDAO.addPayment(paymentEntity)
     }
