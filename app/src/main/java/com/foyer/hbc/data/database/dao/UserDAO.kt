@@ -17,4 +17,7 @@ interface UserDAO {
 
     @Insert(onConflict = OnConflictStrategy.ABORT)
     suspend fun addUser(userEntity: UserEntity)
+
+    @Query("SELECT * from UserEntity order by consumptionsPayed desc LIMIT :take")
+    suspend fun getBestUsers(take: Int): List<UserEntity>
 }

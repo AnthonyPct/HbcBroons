@@ -7,6 +7,7 @@ import com.foyer.hbc.data.api.ffhb.FfhbRepository
 import com.foyer.hbc.domain.data.matchs.MatchState
 import com.foyer.hbc.domain.data.matchs.TEAM
 import com.foyer.hbc.domain.model.MatchEntity
+import com.foyer.hbc.domain.model.isBroonsMatch
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
@@ -26,7 +27,6 @@ class MatchViewModel(application: Application, private val repository: FfhbRepos
         val MatchModule = module {
             viewModel { MatchViewModel(androidApplication(), get()) }
         }
-        const val BROONS_TEAMS_NAME = "BROONS"
     }
 
     ///////////////////////////////////////////////////////////////////////////
@@ -35,6 +35,7 @@ class MatchViewModel(application: Application, private val repository: FfhbRepos
 
     private var mutableState = MutableStateFlow<MatchState>(MatchState.Loading)
     private var oldMatchs: List<MatchEntity>? = null
+    private var filterActive: Boolean = false
 
     ///////////////////////////////////////////////////////////////////////////
     // CONTRACT IMPLEMENTATION
@@ -44,10 +45,17 @@ class MatchViewModel(application: Application, private val repository: FfhbRepos
         get() = mutableState
 
     override fun getMatchs(team: TEAM) {
+        mutableState.value = MatchState.Loading
         viewModelScope.launch {
             try {
-                val match = repository.getMatchs(team)
-                mutableState.value = MatchState.HasMatch(match)
+                oldMatchs = repository.getMatchs(team)
+                oldMatchs?.let {
+                    mutableState.value = MatchState.HasMatch(
+                        if (filterActive) {
+                            it.filter { match -> match.isBroonsMatch() }
+                        } else it
+                    )
+                }
             } catch (e: Exception) {
                 mutableState.value = MatchState.Error
             }
@@ -55,16 +63,16 @@ class MatchViewModel(application: Application, private val repository: FfhbRepos
     }
 
     override fun applyFilter() {
-        oldMatchs = (state.value as? MatchState.HasMatch)?.matchs
+        filterActive = true
         oldMatchs?.let {
-            mutableState.value = MatchState.HasMatch(it.filter {
-                it.firstTeam?.contains(BROONS_TEAMS_NAME, true) == true ||
-                        it.secondTeam?.contains(BROONS_TEAMS_NAME, true) == true
-            })
+            mutableState.value = MatchState.HasMatch(
+                it.filter { match -> match.isBroonsMatch() }
+            )
         }
     }
 
     override fun resetFilter() {
+        filterActive = false
         oldMatchs?.let { mutableState.value = MatchState.HasMatch(it) }
     }
 }

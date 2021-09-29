@@ -14,6 +14,7 @@ interface DatabaseRepository {
     ///////////////////////////////////////////////////////////////////////////
 
     fun getUser(): Flow<List<UserEntity>>
+    suspend fun getBestFiveUser(): List<UserEntity>
     suspend fun addUser(userEntity: UserEntity)
     suspend fun saveUser(users: List<UserEntity>)
     suspend fun updateUserBalance(userEntity: UserEntity, price: Double, quantity: Int)

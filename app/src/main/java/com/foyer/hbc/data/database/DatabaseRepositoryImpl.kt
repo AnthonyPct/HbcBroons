@@ -23,6 +23,9 @@ class DatabaseRepositoryImpl(
     override fun getUser(): Flow<List<UserEntity>> =
         userDAO.getUsers()
 
+    override suspend fun getBestFiveUser(): List<UserEntity> {
+        return userDAO.getBestUsers(5)
+    }
 
     override suspend fun saveUser(users: List<UserEntity>) {
         userDAO.saveUser(users)

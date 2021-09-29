@@ -53,10 +53,21 @@
 
     <com.github.mikephil.charting.charts.LineChart
         android:id="@+id/conso_graph"
-        android:layout_width="wrap_content"
-        android:layout_height="400dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header_container" />
+
+    <com.foyer.hbc.presentation.stats.graph.PodiumComponent
+        android:id="@+id/podium_component"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/header_container" />
 

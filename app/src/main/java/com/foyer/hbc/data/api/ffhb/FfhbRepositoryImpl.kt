@@ -35,7 +35,7 @@ class FfhbRepositoryImpl(val api: IffhbApi) : FfhbRepository {
             model.matchs.day20,
             model.matchs.day21,
             model.matchs.day22,
-        )
+        ).filterNotNull()
 
         days.forEach { day ->
             day.events
@@ -47,7 +47,7 @@ class FfhbRepositoryImpl(val api: IffhbApi) : FfhbRepository {
                             firstScore = match.teams.first().score,
                             secondTeam = match.teams[1].name,
                             secondScore = match.teams[1].score,
-                            pdfPath = match.pdfPath
+                            pdfPath = "https://www.ffhandball.fr/api/s3/fdm/R/A/D/O/${match.pdfCode}.pdf"
                         )
                     )
                 }

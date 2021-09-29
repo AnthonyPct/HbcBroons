@@ -49,6 +49,7 @@ class CheckoutComponent @JvmOverloads constructor(
     ///////////////////////////////////////////////////////////////////////////
     // HELPER
     ///////////////////////////////////////////////////////////////////////////
+
     private fun setGraph(entries: Map<String, Double>) {
         val pieEntries = mutableListOf<PieEntry>()
         val label = mutableListOf<String>()
@@ -80,5 +81,4 @@ class CheckoutComponent @JvmOverloads constructor(
             invalidate()
         }
     }
-
 }

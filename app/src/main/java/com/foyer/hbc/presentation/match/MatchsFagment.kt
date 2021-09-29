@@ -1,5 +1,7 @@
 package com.foyer.hbc.presentation.match
 
+import android.content.Intent
+import android.net.Uri
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
@@ -25,6 +27,7 @@ class MatchsFagment : BaseFragment<FragmentMatchsBinding>(), MatchContract.ViewE
     companion object {
         private const val COLUMN_NUMBER = 3
         private const val MATCH_SPACING = 20
+        private const val DRIVE_PREFIX_URL = "http://docs.google.com/viewer?url="
     }
 
     override fun getViewBinding(): FragmentMatchsBinding {
@@ -72,10 +75,14 @@ class MatchsFagment : BaseFragment<FragmentMatchsBinding>(), MatchContract.ViewE
         lifecycleScope.launch {
             viewModel.state.collect {
                 when (it) {
-                    MatchState.Loading -> showLoader()
+                    MatchState.Loading -> {
+                        binding?.matchsRecyclerview?.visibility = View.INVISIBLE
+                        showLoader()
+                    }
                     is MatchState.HasMatch -> {
                         hideLoader()
                         binding?.matchBroonsCheckboxFilter?.isEnabled = true
+                        binding?.matchsRecyclerview?.visibility = View.VISIBLE
                         matchsAdapter.setData(it.matchs)
                     }
                     MatchState.Error -> {
@@ -94,7 +101,8 @@ class MatchsFagment : BaseFragment<FragmentMatchsBinding>(), MatchContract.ViewE
 
     override fun onClickMatch(pdfPath: String?) {
         pdfPath?.let {
-
+            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(DRIVE_PREFIX_URL + it))
+            startActivity(browserIntent)
         }
     }
 

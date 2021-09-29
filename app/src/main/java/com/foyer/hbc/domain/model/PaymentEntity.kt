@@ -13,7 +13,7 @@ data class PaymentEntity(
     var date: Date,
     var factureUrl: String?,
     var isPayed: Boolean,
-    var nbFut: Int?,ge
+    var nbFut: Int?,
     var mode: PaymentType,
     var charge: Boolean
 ) {

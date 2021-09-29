@@ -8,6 +8,7 @@ import com.foyer.hbc.domain.usecase.splashscreen.FetchCheckoutUseCase
 import com.foyer.hbc.domain.usecase.splashscreen.FetchConsumptionsUseCase
 import com.foyer.hbc.domain.usecase.splashscreen.FetchPaymentsUseCase
 import com.foyer.hbc.domain.usecase.splashscreen.FetchUserUseCase
+import com.foyer.hbc.domain.usecase.stats.GetConsumptionsEntryUseCase
 import com.foyer.hbc.domain.usecase.users.AddPaymentUseCase
 import com.foyer.hbc.domain.usecase.users.AddUserUseCase
 import org.koin.android.ext.koin.androidContext
@@ -24,4 +25,5 @@ val UseCaseModule = module {
     single { AddConsumptionUseCase(get(), get()) }
     single { AddPaymentUseCase(get(), get()) }
     single { AddUserUseCase(get(), get()) }
+    single { GetConsumptionsEntryUseCase(get()) }
 }

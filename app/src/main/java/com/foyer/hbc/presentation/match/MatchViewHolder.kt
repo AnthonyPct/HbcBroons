@@ -1,5 +1,7 @@
 package com.foyer.hbc.presentation.match
 
+import android.graphics.Typeface
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.foyer.hbc.R
 import com.foyer.hbc.databinding.ItemMatchBinding
@@ -32,6 +34,23 @@ class MatchViewHolder(
             matchSecondScore.text = matchEntity.secondScore?.toString()
             binding.root.setOnClickListener {
                 listener.onClickMatch(matchEntity.pdfPath)
+            }
+            highlightWinningTeam(matchEntity.firstScore ?: 0, matchEntity.secondScore ?: 0)
+        }
+    }
+
+    ///////////////////////////////////////////////////////////////////////////
+    // HELPER
+    ///////////////////////////////////////////////////////////////////////////
+
+    private fun highlightWinningTeam(firstScore: Int, secondScore: Int) {
+        when {
+            firstScore > secondScore -> {
+                binding.matchFirstTeam.setTextColor(ContextCompat.getColor(binding.root.context, R.color.black))
+
+            }
+            secondScore > firstScore -> {
+                binding.matchSecondTeam.setTextColor(ContextCompat.getColor(binding.root.context, R.color.black))
             }
         }
     }

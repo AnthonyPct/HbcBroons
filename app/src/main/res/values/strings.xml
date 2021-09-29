@@ -19,7 +19,7 @@
     <string name="carousel_checkout_title">Montant actuel de la cagnotte</string>
     <string name="carousel_checkout_subtitle">Il y a actuellement une facture en cours non payés de %s</string>
     <string name="carousel_checkout_subtitle_no_bill">Pas de factures en cours, tout est payé</string>
-    <string name="carousel_unpayed_title">Le mauvais élève</string>
+    <string name="carousel_unpayed_title">Téma le gros rat</string>
     <string name="carousel_unpayed_subtitle">Dépêche toi de payer, tu dois %s</string>
     <string name="carousel_sum_title">Total de gobelet engloutis</string>
     <string name="carousel_payed_title">Le bon élève</string>
@@ -98,6 +98,7 @@
     <string name="match_day">Journée %s</string>
     <string-array name="team">
         <item>Séniors garcons</item>
+        <item>Séniors garcons 2</item>
         <item>Séniors filles</item>
     </string-array>
 

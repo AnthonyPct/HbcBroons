@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_dashboard_historic"
+    android:padding="30dp">
+
+    <ImageView
+        android:id="@+id/five_place_user"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@id/five_place"
+        app:layout_constraintEnd_toEndOf="@id/five_place"
+        app:layout_constraintStart_toStartOf="@id/five_place" />
+
+    <TextView
+        android:id="@+id/five_place"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@color/main_red"
+        android:gravity="center"
+        android:text="5"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/third_place_user"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@id/third_place"
+        app:layout_constraintEnd_toEndOf="@id/third_place"
+        app:layout_constraintStart_toStartOf="@id/third_place" />
+
+    <TextView
+        android:id="@+id/third_place"
+        android:layout_width="100dp"
+        android:layout_height="140dp"
+        android:background="@color/main_red"
+        android:gravity="center"
+        android:text="3"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/five_place" />
+
+    <ImageView
+        android:id="@+id/first_place_user"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@id/first_place"
+        app:layout_constraintEnd_toEndOf="@id/first_place"
+        app:layout_constraintStart_toStartOf="@id/first_place" />
+
+    <TextView
+        android:id="@+id/first_place"
+        android:layout_width="100dp"
+        android:layout_height="190dp"
+        android:background="@color/main_red"
+        android:gravity="center"
+        android:text="1"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/third_place" />
+
+    <ImageView
+        android:id="@+id/second_place_user"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@id/second_place"
+        app:layout_constraintEnd_toEndOf="@id/second_place"
+        app:layout_constraintStart_toStartOf="@id/second_place" />
+
+    <TextView
+        android:id="@+id/second_place"
+        android:layout_width="100dp"
+        android:layout_height="160dp"
+        android:background="@color/main_red"
+        android:gravity="center"
+        android:text="2"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/first_place" />
+
+    <ImageView
+        android:id="@+id/fourth_place_user"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@id/fourth_place"
+        app:layout_constraintEnd_toEndOf="@id/fourth_place"
+        app:layout_constraintStart_toStartOf="@id/fourth_place" />
+
+    <TextView
+        android:id="@+id/fourth_place"
+        android:layout_width="100dp"
+        android:layout_height="120dp"
+        android:background="@color/main_red"
+        android:gravity="center"
+        android:text="4"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/second_place" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

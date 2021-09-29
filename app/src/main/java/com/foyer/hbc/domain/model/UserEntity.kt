@@ -2,6 +2,7 @@ package com.foyer.hbc.domain.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.text.Normalizer
 
 @Entity
 data class UserEntity(
@@ -14,7 +15,7 @@ data class UserEntity(
     constructor() : this("", "", 0.0, 0)
 
     override fun toString(): String =
-        "$nom Equipe : $equipe /balance $balance}"
+        "$nom Equipe : $equipe /balance $balance} conso $consumptionsPayed"
 }
 
 ///////////////////////////////////////////////////////////////////////////
@@ -22,5 +23,9 @@ data class UserEntity(
 ///////////////////////////////////////////////////////////////////////////
 
 fun UserEntity.getUrlImages(): String {
-    return nom.replace(" ", "").plus(".jpeg")
+    return Normalizer
+        .normalize(nom, Normalizer.Form.NFD)
+        .replace("[^\\\\p{ASCII}]", "")
+        .replace(" ", "")
+        .plus(".jpeg")
 }
