@@ -18,7 +18,7 @@ interface PaymentDAO {
     @Query("Select * from PaymentEntity")
     fun getAllPayments(): Flow<List<PaymentEntity>>
 
-    @Query("Select * from PaymentEntity where charge = :isCharge")
+    @Query("Select * from PaymentEntity where charge = :isCharge ORDER BY date DESC")
     fun getBillsFlow(isCharge: Boolean = true): Flow<List<PaymentEntity>>
 
     @Query("Select * from PaymentEntity where charge = :isCharge")

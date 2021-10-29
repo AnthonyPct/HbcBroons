@@ -24,7 +24,7 @@ data class UserEntity(
 
 fun UserEntity.getUrlImages(): String {
     return Normalizer
-        .normalize(nom, Normalizer.Form.NFD)
+        .normalize(nom.capitalize(), Normalizer.Form.NFD)
         .replace("[^\\\\p{ASCII}]", "")
         .replace(" ", "")
         .plus(".jpeg")
